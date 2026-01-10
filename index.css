@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #240046; /* deepPurple */
+  color: #F3F4F6; /* off-white */
+  overflow-x: hidden; /* Prevent horizontal scroll from animations */
+}
