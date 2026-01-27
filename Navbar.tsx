@@ -1,8 +1,10 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +15,7 @@ const Navbar = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
+    setIsOpen(false);
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -36,6 +39,14 @@ const Navbar = () => {
           <img src="/media/87px logo-white teal.png" alt="87px Logo" className="h-16 w-auto" />
         </button>
 
+        {/* Mobile Menu Toggle */}
+        <button
+          className="md:hidden text-white hover:text-electricTeal transition-colors"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+
         <div className="hidden md:flex items-center gap-8">
           <button
             onClick={() => scrollToSection('services')}
@@ -57,6 +68,30 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-deepPurple/95 backdrop-blur-md border-b border-white/5 overflow-hidden"
+          >
+            <div className="flex flex-col items-center gap-8 py-8">
+              {['services', 'work', 'contact'].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => scrollToSection(item)}
+                  className="font-inter text-lg text-off-white/70 hover:text-electricTeal transition-colors uppercase tracking-wider"
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };

@@ -66,8 +66,13 @@ const ShftrsSpotlight = () => {
         </motion.div>
 
         {/* Visual Placeholder */}
-        <motion.div className="flex h-96 items-center justify-center rounded-md border-2 border-dashed border-electricTeal/20 bg-deepPurple/50 p-8 md:h-[32rem]" variants={visualVariants}>
-          <p className="font-inter text-center text-off-white/50">[App Mockup Visual Here]</p>
+        <motion.div className="relative flex h-96 items-center justify-center overflow-hidden rounded-md border border-electricTeal/20 bg-deepPurple/50 md:h-[32rem]" variants={visualVariants}>
+        <motion.div className="relative flex h-[32rem] items-center justify-center overflow-hidden rounded-md border border-electricTeal/20 bg-deepPurple/50 md:h-[48rem]" variants={visualVariants}>
+          <img
+            src="/media/shftrs.png"
+            alt="SHFTRS App Interface"
+            className="h-full w-full object-cover opacity-90 transition-opacity duration-500 hover:opacity-100"
+          />
         </motion.div>
       </motion.div>
     </section>
