@@ -142,6 +142,10 @@ p { margin: 0; }
 .shot:hover::after { transform: translate(18px, 18px); }
 .shot { isolation: isolate; }
 @media (max-width: 900px) { .sites .wrap { grid-template-columns: 1fr; } .shot { margin: 0 12px 12px; } }
+.sites .case2 { margin-top: clamp(90px, 10vw, 160px); grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); }
+.sites .case2 h3 { font-size: clamp(40px, 5vw, 80px); }
+.sites .case2 .shot { max-width: 560px; justify-self: center; }
+@media (max-width: 900px) { .sites .case2 .shot { order: 2; } }
 
 /* side quests */
 .quests { position: relative; padding: clamp(100px, 11vw, 170px) 0; background: linear-gradient(to bottom, var(--ink), var(--ink-2) 30%, var(--ink-2) 70%, var(--ink)); overflow: hidden; }
@@ -191,6 +195,7 @@ p { margin: 0; }
 footer { padding: 26px 0 30px; background: var(--plum); color: rgba(243, 241, 246, .58); font-size: 14px; }
 footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; border-top: 1px solid rgba(243, 241, 246, .14); padding-top: 24px; }
 footer a { text-decoration: none; }
+footer .legal { display: flex; flex-wrap: wrap; gap: 8px 22px; }
 footer a:hover { color: var(--paper); }
 
 .reveal { transform: translateY(28px); transition: transform .9s var(--ease); }
@@ -287,6 +292,16 @@ footer a:hover { color: var(--paper); }
         <img src="assets/work-greenspace.webp" alt="The Green Space SOS homepage: Greener spaces. Stronger communities." width="1600" height="900" loading="lazy">
       </figure>
     </div>
+    <div class="wrap case2">
+      <figure class="shot reveal">
+        <img src="assets/work-copped.webp" alt="The Police Chiefs' Welfare Platitude Generator, a fruit machine whose reels read Warm words, Strategic priority, Under review, Action pending" width="1100" height="1190" loading="lazy">
+      </figure>
+      <div class="reveal">
+        <h3>Copped Enough</h3>
+        <p>A playable fruit machine for <strong>UK Cop Humour</strong>, backing the Police Federation's Copped Enough campaign. Spin the reels and it deals out the management speak officers keep hearing, then points people to the digital picket line.</p>
+        <a class="link" href="https://copped-enough.ukcophumour.co.uk/" target="_blank" rel="noopener">Spin the machine <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a>
+      </div>
+    </div>
   </section>
 
   <section class="quests" aria-labelledby="quests-h">
@@ -337,7 +352,12 @@ footer a:hover { color: var(--paper); }
 <footer>
   <div class="wrap">
     <span>&copy; 1987-<span id="yr">2026</span> 87PX Creative Studio</span>
-    <a href="#top">Back to top</a>
+    <nav class="legal" aria-label="Legal">
+      <a href="privacy.html">Privacy policy</a>
+      <a href="cookies.html">Cookie policy</a>
+      <a href="terms.html">Terms &amp; conditions</a>
+      <a href="cookies.html#settings">Cookie settings</a>
+    </nav>
   </div>
 </footer>
 
