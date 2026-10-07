@@ -1,7 +1,8 @@
-# Static site, no build step. Netlify serves this folder as-is.
+# Static site. The "build" just copies the files into dist/, which is
+# also what the Netlify UI expects, so either setting deploys the same thing.
 [build]
-  publish = "."
-  command = "echo No build step"
+  publish = "dist"
+  command = "rm -rf dist && mkdir dist && cp -R index.html privacy.html cookies.html terms.html assets dist/"
 
 [[headers]]
   for = "/assets/*"
