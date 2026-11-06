@@ -2,7 +2,7 @@
 # also what the Netlify UI expects, so either setting deploys the same thing.
 [build]
   publish = "dist"
-  command = "rm -rf dist && mkdir dist && cp -R index.html privacy.html cookies.html terms.html assets dist/"
+  command = "rm -rf dist && mkdir dist && cp -R index.html privacy.html cookies.html terms.html robots.txt sitemap.xml assets dist/"
 
 [[headers]]
   for = "/assets/*"
@@ -14,3 +14,9 @@
   [headers.values]
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Keep Netlify preview and branch deploys out of Google; only the live domain gets indexed.
+[context.deploy-preview]
+  command = "rm -rf dist && mkdir dist && cp -R index.html privacy.html cookies.html terms.html assets dist/ && printf 'User-agent: *\\nDisallow: /\\n' > dist/robots.txt"
+[context.branch-deploy]
+  command = "rm -rf dist && mkdir dist && cp -R index.html privacy.html cookies.html terms.html assets dist/ && printf 'User-agent: *\\nDisallow: /\\n' > dist/robots.txt"

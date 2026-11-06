@@ -3,9 +3,74 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>87PX Creative Studio</title>
-<meta name="description" content="87PX is an independent South Wales studio making films, websites and apps.">
+<title>87PX Creative Studio | Films, websites and apps in South Wales</title>
+<meta name="description" content="87PX is an independent South Wales studio making films, websites and apps, including SHFTRS, the rota and wellbeing app for police officers.">
+<link rel="canonical" href="https://87px.co.uk/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="87PX Creative Studio">
+<meta property="og:title" content="87PX Creative Studio: Films. Sites. Side quests.">
+<meta property="og:description" content="An independent South Wales studio making films, websites and apps for people with something worth saying.">
+<meta property="og:url" content="https://87px.co.uk/">
+<meta property="og:image" content="https://87px.co.uk/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B0712">
 <link rel="icon" href="assets/87px-logo.png">
+<link rel="apple-touch-icon" href="assets/87px-logo.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://87px.co.uk/#org",
+   "name": "87PX Creative Studio",
+   "alternateName": "87PX",
+   "url": "https://87px.co.uk/",
+   "logo": "https://87px.co.uk/assets/87px-logo.png",
+   "image": "https://87px.co.uk/assets/og.jpg",
+   "email": "chris@87px.co.uk",
+   "description": "Independent creative studio in South Wales making films, websites and apps.",
+   "areaServed": "GB",
+   "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "South Wales",
+    "addressCountry": "GB"
+   },
+   "owns": {
+    "@id": "https://shftrs.app/#app"
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://87px.co.uk/#website",
+   "url": "https://87px.co.uk/",
+   "name": "87PX Creative Studio",
+   "publisher": {
+    "@id": "https://87px.co.uk/#org"
+   },
+   "inLanguage": "en-GB"
+  },
+  {
+   "@type": "SoftwareApplication",
+   "@id": "https://shftrs.app/#app",
+   "name": "SHFTRS",
+   "url": "https://shftrs.app/",
+   "applicationCategory": "BusinessApplication",
+   "operatingSystem": "iOS, Android",
+   "description": "Rota and wellbeing app for police officers in England and Wales: shift patterns, overtime and leave, with tools for sleep, food, training and family built around the job.",
+   "creator": {
+    "@id": "https://87px.co.uk/#org"
+   },
+   "publisher": {
+    "@id": "https://87px.co.uk/#org"
+   }
+  }
+ ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Geist:wght@400;500&family=Geist+Mono:wght@500&display=swap">
@@ -158,6 +223,9 @@ p { margin: 0; }
 .q-copy img { height: 26px; width: auto; margin-bottom: 22px; }
 .q-copy p { color: var(--muted); font-size: clamp(17px, 1.3vw, 19px); }
 .q-copy p + p { margin-top: 14px; }
+.q-copy p a { color: var(--paper); text-decoration-color: var(--teal); text-underline-offset: 3px; }
+.q-copy p a:hover { color: var(--teal); }
+.q-copy > a:first-child, .clients li a { display: inline-block; text-decoration: none; }
 .q-facts { list-style: none; margin: 0; padding: 0; display: grid; gap: 28px; justify-self: end; }
 .q-facts b { display: block; font: 900 clamp(28px, 2.6vw, 40px)/1 var(--display); font-stretch: 112%; letter-spacing: -.02em; }
 .q-facts span { color: var(--muted); font-size: 15px; }
@@ -244,7 +312,7 @@ footer a:hover { color: var(--paper); }
       <ul>
         <li><img src="assets/logo-greenspace.png" alt="Green Space SOS" height="46"></li>
         <li><img src="assets/logo-rxii.png" alt="Round XII" height="46"></li>
-        <li><img src="assets/logo-shftrs.png" alt="SHFTRS" height="46"></li>
+        <li><a href="https://shftrs.app/" title="SHFTRS, the police rota and wellbeing app"><img src="assets/logo-shftrs.png" alt="SHFTRS" height="46"></a></li>
       </ul>
     </div>
   </section>
@@ -309,9 +377,10 @@ footer a:hover { color: var(--paper); }
       <h2 id="quests-h" class="reveal">Side <span class="t">quests.</span></h2>
       <div class="q-body">
         <div class="q-copy reveal">
-          <img src="assets/logo-shftrs.png" alt="SHFTRS">
-          <p>The projects nobody asked us for. SHFTRS is the biggest so far: a rota and wellbeing app built for British police officers.</p>
+          <a href="https://shftrs.app/"><img src="assets/logo-shftrs.png" alt="SHFTRS"></a>
+          <p>The projects nobody asked us for. <a href="https://shftrs.app/">SHFTRS</a> is the biggest so far: a rota and wellbeing app built for British police officers.</p>
           <p>It handles shift patterns, overtime and leave, with tools for mental and physical health built around the job.</p>
+          <a class="link" href="https://shftrs.app/">Visit shftrs.app <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg></a>
         </div>
         <div class="q-phone reveal">
           <div class="panel"></div>
@@ -353,10 +422,10 @@ footer a:hover { color: var(--paper); }
   <div class="wrap">
     <span>&copy; 1987-<span id="yr">2026</span> 87PX Creative Studio</span>
     <nav class="legal" aria-label="Legal">
-      <a href="privacy.html">Privacy policy</a>
-      <a href="cookies.html">Cookie policy</a>
-      <a href="terms.html">Terms &amp; conditions</a>
-      <a href="cookies.html#settings">Cookie settings</a>
+      <a href="/privacy">Privacy policy</a>
+      <a href="/cookies">Cookie policy</a>
+      <a href="/terms">Terms &amp; conditions</a>
+      <a href="/cookies#settings">Cookie settings</a>
     </nav>
   </div>
 </footer>
